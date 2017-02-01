@@ -1,0 +1,106 @@
+Myresume NODEJS/EXPRESS TUTORIAL - ruff 
+
+// this tutorial is using express.js 
+// you need to have node installed for this
+// you will also need npm 
+// go to www.expressjs.com and check it out, read into it. 
+
+- create folder called myresume 
+- cd to my resume folder 
+-   go to terminal and run npm init which is goign to create a package.json file for us
+
+- ADDING EXPPRESS MODULE TO PACKAGE.JSON FILE 
+we can do this by using the command from the website or adding it to the package.json file. 
+here we have added it to the package.json file 
+
+{
+  "name": "myresume",
+  "version": "1.0.0",
+  "description": "simple express application ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies" : {
+
+    "express" : "*",
+    "body-parser" : "*"
+  }
+
+after you add the dependencies, run the npm install in the terminal and it will install any dependencies you have mentioned. (short desc of the stuff)
+
+After you run the npm command you will notice the node_modules folder in the folder myresume. 
+
+now we need to create our (entry file) app.js 
+In your editor create a file called app.js 
+
+first thing we are going to is reuqire express
+var express = require('express'); 
+
+second body parser (explain this)
+var bodyParser = require('body-parser');
+
+ path module (explain this)
+var path = require('path');
+
+
+
+Instantiate our express application 
+
+create variable called app and set it to express
+
+Middle ware (explain this)
+A function that has access to req and responce methods
+- execute code 
+- make changes to req and res
+
+//middleware function
+app.use(function(req, res, next){
+  console.log('Time: ', Date.now());
+  
+  next();
+});
+
+//body parsers middleware 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+
+
+//creating route 
+app.get('/', function(req, res){
+  res.send("hello");
+});
+
+run command node myresume 
+ 
+go into the browser 
+http://localhost:3000/
+
+and youl see hell0
+
+install nodemon so you dont have to keep running the node command
+run nodemon - 
+run node myresume 
+
+
+create about route
+we need to create a route to navigate to it. 
+
+app.get('/about', function(req, res){
+  res.send("About me");
+});
+
+now go to 
+
+http://localhost:3000/about
+
+
+
+
+
+
+}
+
+

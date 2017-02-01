@@ -203,6 +203,50 @@ Now just like the include we need to add the footer to all the pages.
 <%- include('includes/footer') %>
 
 
+Step 3
+
+Lets add some content to those pages and finish the tutorial 
+
+we can add a jumbotron to the home page and put a short desc of our occupation
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>Welcome</h1>
+    <p class="lead">Web/Mobile Application specialist </p>
+  </div>
+</div>
+
+In my case i am a web developer you can add what you like. 
+
+You can see the results of this when you navigate to http://localhost:3000/
+
+
+
+For the experience page 
+I have formated the code this way for ease 
+
+<div class="page-header">
+  <h4>Front End Developer (Contract)  <small>Jawa Auction Inc.</small></h4>
+</div>
+ <ul> 
+  <li>Responsible for the Front-end development the Jawa Auction Application </li>
+  <li>Developed the frame of the front-end responsive design utilizing Twitter Bootstrap
+     (CSS Framework). 
+</li>
+  <li>Developed the Front-end using the JavaScript framework ember.js. </li>
+  <li>Utilized a Git repository for version control.</li>
+  <li>Utilized the command line to create routes, components and other files needed for ember.js. </li>
+</ul> 
+
+I will fill the rest of my pages and if you like you can follow the same format or design the ui as you like. 
+
+I hope you found this helpful . 
+
+
+
+
+
+
 
 
 

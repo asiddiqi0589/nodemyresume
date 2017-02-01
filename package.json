@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "*",
+    "ejs": "^2.5.5",
     "express": "*"
-    
   }
 }

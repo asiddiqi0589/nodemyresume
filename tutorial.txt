@@ -1,3 +1,4 @@
+STEP 1
 Myresume NODEJS/EXPRESS TUTORIAL - ruff 
 
 // this tutorial is using express.js 
@@ -95,12 +96,115 @@ app.get('/about', function(req, res){
 now go to 
 
 http://localhost:3000/about
+now you see about me 
+
+STEP 2  
+
+now we need to install EJS 
+EJS is a simple templating language that lets you generate HTML markup with plain JavaScript. ejs will make your life easy and it is very easy to install. 
+
+Run npm install ejs --save into the termnal, this will add ejs to the packake.json file 
+
+create a views folder 
+in the views folder create the following files
+//views folder 
+create an index.ejs file // this will be the home page 
+create an about.ejs file // this will be the about page 
+create an school.ejs file // this will be the school page 
+create an experance.ejs file // this will be the experiance page
+create an contact.ejs file // this will be the hope page 
+
+//implement bootstrap
+create incldues folder inside the views folder 
+//create head.ejs file 
+//create footer.ejs file 
+
+open head.ejs file 
+and (below) html to it, this bootstrap code is easy to understand. 
+note we have added the about/school/contact pages to the navigation
+
+<html>
+  <head>
+    <title>My Website</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">My Website</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/experience">Work Experience </a></li>
+            <li><a href="/school">School</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+open index.ejs file to include the includes folder
+
+<%- include('includes/head') %>
+<h1>hello world</h1>
+
+if you have nodemon running you can see the navbar and the helloworld in the h1 tag. 
+
+open the app.js file 
+
+lets create the about/experience/school/contact route 
+
+
+app.get('/about', function(req, res){
+  res.render("about");
+});
+
+app.get('/experience', function(req, res){
+  res.render("experience");
+});
+
+app.get('/school', function(req, res){
+  res.render("school");
+});
+
+app.get('/contact', function(req, res){
+  res.render("contact");
+});
+
+open the about.ejs file and add
+<h1>About Me</h1>
+
+please navigate to about
+http://localhost:3000/about
+
+As you can see the About me appears in the page but the bootstrap is missing, this is because we have not included in the about.ejs page
+
+add the include to the about.ejs /contact.ejs/experience.ejs and school.ejs pages. 
+
+<%- include('includes/head') %>
+
+Now when you navigate you can see the titles of the page with the top navigation. 
+
+Lets add a footer.ejs file to the includes folder and the closing tag of the div container in it. you can add other things to the footer if you like. 
+
+Now just like the include we need to add the footer to all the pages. 
+
+<%- include('includes/footer') %>
 
 
 
 
 
-
-}
 
 

@@ -13,18 +13,37 @@ app.use(function(req, res, next){
 });
 
 //body parsers middleware 
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 
-//creating route 
 app.get('/', function(req, res){
-	res.send("hello");
+	res.render('index',{
+
+		title: 'hello my name is sohail',
+		showTitle: true,
+		people: ['john', 'sara', 'ali']
+	});
 });
 
 
 app.get('/about', function(req, res){
-	res.send("About me");
+	res.render('about');
+});
+
+app.get('/experience', function(req, res){
+	res.render("experience");
+});
+
+app.get('/school', function(req, res){
+	res.render("school");
+});
+
+app.get('/contact', function(req, res){
+	res.render("contact");
 });
 
 
